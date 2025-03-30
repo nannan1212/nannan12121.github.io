@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>❤️ 给你的专属情书</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Microsoft Yahei', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h1 {
+            color: #ff4757;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .love-letter {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #2d3436;
+        }
+
+        .heart {
+            font-size: 60px;
+            color: #ff4757;
+            animation: heartbeat 1.2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .photos img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .photos img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart" onclick="showMessage()">❤️</div>
+        <h1>致我最爱的 [名字]</h1>
+        <div class="love-letter">
+            <p>从第一次见到你的那天起，</p >
+            <p>你的笑容就像春天的阳光，</p >
+            <p>温暖了我生命中的每个角落。</p >
+            <p>和你在一起的每一刻，</p >
+            <p>都值得用一生去珍藏。</p >
+            <p>❤️ [你的名字] ❤️</p >
+        </div>
+        
+        <div class="photos">
+            < img src="photo1.jpg" alt="我们的记忆">
+            < img src="photo2.jpg" alt="美好时光">
+            < img src="photo3.jpg" alt="幸福瞬间">
+        </div>
+
+        <audio id="bgm" loop>
+            <source src="love_music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("我会永远爱你，直到时间的尽头！");
+            document.getElementById('bgm').play();
+        }
+
+        // 自动播放音乐
+        document.addEventListener('click', function() {
+            document.getElementById('bgm').play();
+        });
+    </script>
+</body>
+</html>
